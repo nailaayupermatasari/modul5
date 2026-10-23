@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 2 - Bermain dengan Warna (jQuery)</title>
+    <!-- Memanggil Library jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff; /* Warna latar belakang kebiruan muda */
+            text-align: center;
+            padding-top: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        .button-group {
+            margin-bottom: 30px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        /* Warna Tombol */
+        #btnUngu { background-color: #8e44ad; }
+        #btnBiru { background-color: #2980b9; }
+        #btnHijau { background-color: #27ae60; }
+        
+        /* Styling Kotak */
+        #kotak {
+            width: 220px;
+            height: 220px;
+            background-color: #2980b9; /* Default warna biru */
+            margin: 0 auto 30px auto;
+            border: 2px solid #222;
+            border-radius: 12px;
+            /* Efek transisi saat warna berubah */
+            transition: background-color 0.3s ease; 
+        }
+        
+        /* Styling Tombol Toggle */
+        .toggle-group button {
+            padding: 12px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #fdf1e8; /* Warna cream/orange pudar */
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .instruction {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function() {
+            // 1. Fungsi mengubah warna kotak
+            $("#btnUngu").click(function() {
+                $("#kotak").css("background-color", "#8e44ad");
+            });
+            
+            $("#btnBiru").click(function() {
+                $("#kotak").css("background-color", "#2980b9");
+            });
+            
+            $("#btnHijau").click(function() {
+                $("#kotak").css("background-color", "#27ae60");
+            });
+
+            // 2. Fungsi menyembunyikan kotak
+            $("#btnSembunyikan").click(function() {
+                $("#kotak").hide("slow"); // Menggunakan animasi hide jQuery
+            });
+
+            // 3. Fungsi menampilkan kotak kembali
+            $("#btnTampilkan").click(function() {
+                $("#kotak").show("slow"); // Menggunakan animasi show jQuery
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Bermain dengan Warna</h2>
+    
+    <!-- Tombol Warna -->
+    <div class="button-group">
+        <button id="btnUngu">Ungu</button>
+        <button id="btnBiru">Biru</button>
+        <button id="btnHijau">Hijau</button>
+    </div>
+    
+    <!-- Kotak yang akan dimanipulasi -->
+    <div id="kotak"></div>
+    
+    <!-- Tombol Sembunyikan & Tampilkan -->
+    <div class="toggle-group">
+        <button id="btnSembunyikan">Sembunyikan Kotak</button>
+        <button id="btnTampilkan">Tampilkan Kotak</button>
+    </div>
+
+    <div class="instruction">
+        Klik tombol warna untuk mengubah warna kotak.<br>
+        Gunakan tombol Sembunyikan dan Tampilkan untuk menyembunyikan dan menampilkan kotak.
+    </div>
+</body>
+</html>

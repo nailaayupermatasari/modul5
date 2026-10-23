@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1 - Prompt Nama & NIM</title>
+    <script>
+        // Fungsi ini akan dijalankan saat halaman selesai dimuat (window.onload)
+        window.onload = function() {
+            // Menampilkan prompt untuk Nama
+            var nama = prompt("Masukkan nama kamu:");
+            // Menampilkan prompt untuk NIM
+            var nim = prompt("Masukkan nim kamu:");
+
+            // Validasi jika user tidak menekan "Cancel" (nilai tidak null)
+            if (nama !== null) {
+                document.getElementById("inputNama").value = nama;
+            }
+            if (nim !== null) {
+                document.getElementById("inputNim").value = nim;
+            }
+        };
+    </script>
+</head>
+<body>
+    <h2>Form Data Mahasiswa</h2>
+    <form>
+        <!-- ID ini yang digunakan oleh JavaScript di atas -->
+        <label for="inputNama">Nama:</label><br>
+        <input type="text" id="inputNama" readonly><br><br>
+        
+        <label for="inputNim">NIM:</label><br>
+        <input type="text" id="inputNim" readonly><br><br>
+    </form>
+</body>
+</html>
